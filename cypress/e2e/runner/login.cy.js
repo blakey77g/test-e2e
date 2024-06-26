@@ -1,4 +1,5 @@
 const { onLoginPage } = require("../../support/pageObjects/login");
+const { onLandingPage } = require("../../support/pageObjects/landingPage");
 
 
 describe("Login Tests", () => {
@@ -7,6 +8,7 @@ describe("Login Tests", () => {
         onLoginPage.clickSignInHeader();
         onLoginPage.enterLoginCredentails();
         onLoginPage.clickSigninButton();
+        onLandingPage.checkDetails();
 
 
     });
