@@ -9,12 +9,19 @@ export class loginPage {
     }
 
     enterLoginCredentails() {
-        // cy.get(`[id*="username"]`).type("pz4jr0lk84@mxscout.com");
-        // cy.get(`[id*="password"]`).type("test1234");
         cy.get(`[id*="username"]`).type(Cypress.env('user_name'));
         cy.get(`[id*="password"]`).type(Cypress.env('user_password'));
         
     }
+
+    enterInvalidLoginCredentails() {
+        cy.get(`[id*="username"]`).type(Cypress.env('user_name'));
+        cy.get(`[id*="password"]`).type(Cypress.env('user_passwordinvald'));
+    }
+
+    checkMessageDisplayed(){
+        cy.get('[class="pf-c-form__helper-text pf-m-error required kc-feedback-text"]').should('contain', 'Invalid username or password.');
+    }    
 
     clickSigninButton() {
         cy.get('[id="kc-login"]').click();

@@ -3,13 +3,24 @@ const { onLandingPage } = require("../../support/pageObjects/landingPage");
 
 
 describe("Login Tests", () => {
-    it("Log into application", () => {
+     
+    beforeEach(() => {
         onLoginPage.goToHomepage();
         onLoginPage.clickSignInHeader();
+      });
+
+   
+    it("Log into application", () => {
         onLoginPage.enterLoginCredentails();
         onLoginPage.clickSigninButton();
         onLandingPage.checkDetails();
-
-
+    
     });
-});
+
+    it("attempt login with incorrect credentials", () => {
+        onLoginPage.enterInvalidLoginCredentails();
+        onLoginPage.clickSigninButton();
+        onLoginPage.checkMessageDisplayed();
+    })
+
+})
