@@ -9,13 +9,13 @@ export class loginPage {
     }
 
     enterLoginCredentails() {
-        cy.get(`[id*="username"]`).type(Cypress.env('user_name'));
+        cy.get(`[id*="username"]`).type(Cypress.env('user_email'));
         cy.get(`[id*="password"]`).type(Cypress.env('user_password'));
         
     }
 
     enterInvalidLoginCredentails() {
-        cy.get(`[id*="username"]`).type(Cypress.env('user_name'));
+        cy.get(`[id*="username"]`).type(Cypress.env('user_email'));
         cy.get(`[id*="password"]`).type(Cypress.env('user_passwordinvald'));
     }
 
@@ -26,6 +26,7 @@ export class loginPage {
     clickSigninButton() {
         cy.get('[id="kc-login"]').click();
     }
-}
+
+ }
 
 export const onLoginPage = new loginPage(); 

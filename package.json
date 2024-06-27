@@ -5,5 +5,8 @@
   "scripts": {
     "cypress:run": "cypress run",
     "cypress:open": "cypress open"
+  },
+  "dependencies": {
+    "faker": "^6.6.6"
   }
 }
