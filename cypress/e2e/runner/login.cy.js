@@ -1,4 +1,4 @@
-const { onLoginPage } = require("../../support/pageObjects/login");
+const { onLoginPage } = require("../../support/pageObjects/loginPage");
 const { onLandingPage } = require("../../support/pageObjects/landingPage");
 
 
